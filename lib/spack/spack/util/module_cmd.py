@@ -164,10 +164,11 @@ def get_path_arg_from_module_line(line):
     else:
         path_arg = line.split()[2]
 
-    if not os.path.exists(path_arg):
-        tty.warn("Extracted path from module does not exist:"
-                 "\n\tExtracted path: " + path_arg +
-                 "\n\tFull line: " + line)
+    for dir in path_arg.split(':'):
+        if not os.path.exists(dir):
+            tty.warn("Extracted path from module does not exist:"
+                     "\n\tExtracted path: " + dir +
+                     "\n\tFull line: " + line)
     return path_arg
 
 
