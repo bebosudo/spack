@@ -30,7 +30,7 @@ class Xsdk(Package):
     variant('omega-h', default=True, description='Enable omega-h package build')
 
     depends_on('hypre@develop~internal-superlu', when='@develop')
-    depends_on('hypre@2.15.0~internal-superlu', when='@0.4.0')
+    depends_on('hypre@2.15.1~internal-superlu', when='@0.4.0')
     depends_on('hypre@2.12.1~internal-superlu', when='@0.3.0')
     depends_on('hypre@xsdk-0.2.0~internal-superlu', when='@xsdk-0.2.0')
 
@@ -74,12 +74,12 @@ class Xsdk(Package):
     depends_on('alquimia@xsdk-0.3.0', when='@0.3.0')
     depends_on('alquimia@xsdk-0.2.0', when='@xsdk-0.2.0')
 
-    depends_on('sundials@3.2.0~int64+hypre', when='@develop')
-    depends_on('sundials@3.2.0~int64+hypre', when='@0.4.0')
+    depends_on('sundials@3.2.1~int64+hypre', when='@develop')
+    depends_on('sundials@3.2.1~int64+hypre', when='@0.4.0')
     depends_on('sundials@3.1.0~int64+hypre', when='@0.3.0')
 
-    depends_on('plasma@17.2:', when='@develop %gcc@6.0:')
-    depends_on('plasma@17.2:', when='@0.4.0 %gcc@6.0:')
+    depends_on('plasma@18.10.0:', when='@develop %gcc@6.0:')
+    depends_on('plasma@18.10.0:', when='@0.4.0 %gcc@6.0:')
 
     depends_on('magma@2.4.0', when='@develop +cuda')
     depends_on('magma@2.4.0', when='@0.4.0 +cuda')
@@ -97,7 +97,7 @@ class Xsdk(Package):
     depends_on('omega-h@9.19.1', when='@0.4.0 +omega-h')
 
     depends_on('strumpack@master', when='@develop')
-    depends_on('strumpack@master', when='@0.4.0')
+    depends_on('strumpack@3.1.0', when='@0.4.0')
 
     depends_on('pumi@develop', when='@develop')
     depends_on('pumi@develop', when='@0.4.0')
